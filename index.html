@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sizígia — Moodboard Estratégico 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#efe7d7; --paper2:#e3d8c1; --cream:#f7f2e6;
+  --ink:#241f18; --sepia:#6d5128; --gold:#a67c3d; --night:#161310;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 800px at 15% 8%, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(900px 700px at 85% 78%, rgba(176,144,92,.20), transparent 65%),
+    linear-gradient(160deg,#f1ead9,#e4d9c3 58%,#d8cbb0);
+  min-height:100vh; overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- CAPA ---------- */
+.cover{position:relative;padding:86px 24px 26px;text-align:center;overflow:hidden}
+.deco{position:absolute;color:var(--sepia);pointer-events:none}
+.deco-orbit{width:640px;height:640px;left:50%;top:-160px;transform:translateX(-50%);opacity:.16}
+.deco-rose{width:150px;height:150px;right:4%;top:40px;opacity:.22;animation:spin 90s linear infinite}
+.deco-bot{width:120px;height:260px;left:2%;bottom:-40px;opacity:.22}
+@keyframes spin{to{transform:rotate(360deg)}}
+.kicker{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.46em;text-transform:uppercase;color:var(--sepia);position:relative;z-index:2}
+h1{
+  font-size:clamp(56px,12vw,158px);line-height:.92;letter-spacing:.05em;
+  margin:.14em 0 .06em;font-weight:600;position:relative;z-index:2;
+  text-shadow:0 1px 0 rgba(255,255,255,.5);
+}
+h1 .dot{color:var(--gold)}
+.sub{font-size:clamp(17px,2.2vw,24px);letter-spacing:.34em;text-transform:uppercase;color:var(--sepia);position:relative;z-index:2}
+.lead{max-width:660px;margin:26px auto 0;font-size:clamp(16px,1.9vw,20px);line-height:1.6;color:#3d3427;position:relative;z-index:2}
+.lead em{color:var(--gold);font-style:italic}
+.rule{width:min(420px,70%);height:1px;margin:30px auto 0;background:linear-gradient(90deg,transparent,rgba(110,85,45,.6),transparent);position:relative;z-index:2}
+.hintbar{
+  font-family:Inter,sans-serif;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--sepia);margin-top:18px;position:relative;z-index:2;opacity:.85;
+}
+
+/* ---------- FILTROS ---------- */
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:34px 24px 6px;position:relative;z-index:2}
+.chip{
+  font-family:Inter,sans-serif;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding:10px 18px;border:1px solid rgba(110,85,45,.45);background:rgba(255,255,255,.32);
+  color:var(--sepia);border-radius:999px;cursor:pointer;transition:.22s;
+}
+.chip:hover{background:rgba(255,255,255,.65);transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* ---------- MOODBOARD ---------- */
+.board{
+  max-width:1240px;margin:0 auto;padding:44px 26px 130px;
+  display:grid;grid-template-columns:repeat(12,1fr);gap:38px 26px;
+  position:relative;z-index:2;align-items:start;
+}
+.mood-item{position:relative;grid-column:span 4}
+.s5{grid-column:span 5}.s4{grid-column:span 4}.s3{grid-column:span 3}
+
+/* ---------- PAPEL + CAMADA DE COLAGEM ---------- */
+.paper{
+  --rot:0deg;
+  --art:none;
+  --art-size:68%;
+  --art-pos:right -6% bottom -8%;
+  --art-op:.42;
+  position:relative;isolation:isolate;overflow:hidden;
+  display:block;width:100%;min-height:270px;
+  padding:28px 24px 26px;border:0;text-align:left;color:inherit;font:inherit;
+  background:linear-gradient(152deg,var(--paper),var(--paper2));
+  clip-path:var(--torn);
+  cursor:pointer;
+  transform:rotate(var(--rot));
+  transition:transform .38s cubic-bezier(.2,.7,.3,1), filter .3s;
+  filter:drop-shadow(0 16px 22px rgba(40,30,14,.28));
+}
+
+/* gravura colada */
+.paper::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background-image:var(--art);
+  background-repeat:no-repeat;
+  background-size:var(--art-size);
+  background-position:var(--art-pos);
+  mix-blend-mode:multiply;
+  opacity:var(--art-op);
+  filter:saturate(.55) contrast(1.05);
+  transition:opacity .4s, transform .6s cubic-bezier(.2,.7,.3,1);
+  transform:scale(1);
+  pointer-events:none;
+}
+.mood-item:hover .paper::before,
+.mood-item.open .paper::before{ transform:scale(1.04); opacity:calc(var(--art-op) + .10); }
+
+/* papel noturno: inverte a tinta para virar luz */
+.night .paper{background:linear-gradient(152deg,#1d1811,#0f0d0a);color:#ece2cb}
+.night .paper::before{
+  mix-blend-mode:screen;
+  filter:invert(1) contrast(1.15) saturate(.5);
+  opacity:calc(var(--art-op) - .08);
+}
+
+/* véu de leitura */
+.paper::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 12% 46%, var(--paper) 0%, rgba(239,231,215,.88) 34%, transparent 74%),
+    radial-gradient(90% 70% at 84% 82%, rgba(120,95,55,.16), transparent 70%);
+  box-shadow:inset 0 0 46px rgba(120,95,55,.20);
+}
+.night .paper::after{
+  background:radial-gradient(120% 90% at 12% 46%, #171410 0%, rgba(23,20,16,.90) 36%, transparent 76%);
+  box-shadow:inset 0 0 52px rgba(0,0,0,.85);
+}
+.paper > *{position:relative;z-index:2}
+
+.mood-item:hover .paper,.mood-item:focus-within .paper,.mood-item.open .paper{
+  transform:rotate(0deg) translateY(-5px);filter:drop-shadow(0 26px 34px rgba(40,30,14,.4));
+}
+.mood-item:hover,.mood-item:focus-within,.mood-item.open{z-index:50}
+
+.num{font-family:Inter,sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);display:block;margin-bottom:12px}
+h2{font-size:clamp(24px,2.6vw,32px);line-height:1.05;margin:0 0 12px;font-weight:600;letter-spacing:.01em}
+.teaser{font-size:16.5px;line-height:1.5;margin:0;color:#4a4030;font-style:italic}
+.night .teaser{color:#c9bda0}
+.night h2{color:#f3ead6}
+.tag{
+  display:inline-block;margin-top:16px;font-family:Inter,sans-serif;font-size:9.5px;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(166,124,61,.45);padding:5px 10px;border-radius:2px;
+}
+.hint{
+  display:flex;align-items:center;gap:9px;margin-top:20px;
+  font-family:Inter,sans-serif;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);
+}
+.hint svg{width:13px;height:13px;transition:transform .3s}
+.mood-item:hover .hint svg{transform:translateX(4px)}
+
+/* ---------- DETALHE ---------- */
+.detail{
+  position:absolute;inset:-12px;z-index:60;
+  background:linear-gradient(160deg,#faf5e8,#eee4cf);
+  border:1px solid rgba(110,85,45,.4);
+  padding:26px 24px 26px;
+  box-shadow:0 40px 70px -28px rgba(30,22,10,.75), inset 0 0 40px rgba(150,120,70,.12);
+  border-radius:2px;
+  opacity:0;visibility:hidden;transform:translateY(-10px) scale(.985);
+  transition:opacity .24s ease, transform .24s ease, visibility .24s;
+  overflow:auto;overscroll-behavior:contain;
+}
+.detail::-webkit-scrollbar{width:7px}
+.detail::-webkit-scrollbar-thumb{background:rgba(110,85,45,.35);border-radius:9px}
+.mood-item.open .detail,
+.mood-item:hover .detail,
+.mood-item:focus-within .detail{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+
+@media (hover:none){
+  .mood-item:hover .detail{opacity:0;visibility:hidden;transform:translateY(-10px) scale(.985)}
+  .mood-item.open .detail{opacity:1;visibility:visible;transform:none}
+}
+.close{
+  position:absolute;top:10px;right:12px;width:26px;height:26px;border-radius:50%;
+  border:1px solid rgba(110,85,45,.4);background:rgba(255,255,255,.5);
+  color:var(--sepia);font-size:14px;line-height:1;cursor:pointer;display:grid;place-items:center;
+}
+.close:hover{background:var(--ink);color:var(--cream)}
+.detail h3{font-size:23px;margin:0 34px 4px 0;line-height:1.1;font-weight:600}
+.detail .sub2{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
+.detail p{font-size:15px;line-height:1.62;margin:0 0 13px;color:#3b3226}
+.detail h4{
+  font-family:Inter,sans-serif;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--sepia);margin:20px 0 10px;padding-bottom:7px;border-bottom:1px solid rgba(110,85,45,.22);
+}
+.detail ul{margin:0 0 14px;padding-left:0;list-style:none}
+.detail li{position:relative;padding-left:16px;margin-bottom:9px;font-size:14.5px;line-height:1.5;color:#3b3226}
+.detail li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.detail .metric{
+  font-size:13.5px;line-height:1.5;color:#5b4c33;background:rgba(166,124,61,.11);
+  border-left:2px solid var(--gold);padding:10px 12px;margin-top:16px;
+}
+.detail .metric strong{font-family:Inter,sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:4px;color:var(--sepia)}
+
+/* estações */
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 6px}
+.seasons figure{margin:0;text-align:center}
+.seasons svg{width:100%;height:auto;color:var(--sepia);opacity:.8}
+.seasons img{width:100%;height:auto;display:block;filter:sepia(.5) contrast(.95);opacity:.9}
+.seasons figcaption{
+  font-family:Inter,sans-serif;font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sepia);margin-top:5px;
+}
+
+/* ---------- BOTÃO DE COLAGEM ---------- */
+.art-toggle{
+  position:fixed;right:18px;bottom:18px;z-index:200;
+  font-family:Inter,sans-serif;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding:11px 16px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(110,85,45,.45);
+  background:rgba(250,245,232,.86);backdrop-filter:blur(8px);
+  color:var(--sepia);box-shadow:0 10px 24px -10px rgba(30,22,10,.5);
+  transition:.22s;
+}
+.art-toggle:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+body.no-art .paper::before{opacity:0!important}
+
+/* ---------- RODAPÉ ---------- */
+footer{
+  position:relative;z-index:2;text-align:center;padding:0 26px 90px;
+  font-family:Inter,sans-serif;font-size:11px;letter-spacing:.16em;line-height:2;
+  text-transform:uppercase;color:var(--sepia);opacity:.85;
+}
+footer .star{display:block;margin:0 auto 18px;width:26px;height:26px;color:var(--gold);opacity:.7}
+footer .fine{text-transform:none;letter-spacing:.02em;font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;max-width:520px;margin:16px auto 0;opacity:.8}
+
+.hidden{display:none!important}
+
+@media (max-width:960px){
+  .board{grid-template-columns:repeat(6,1fr);gap:30px 20px}
+  .s5,.s4{grid-column:span 6}
+  .s3{grid-column:span 3}
+}
+@media (max-width:640px){
+  .board{grid-template-columns:1fr;gap:30px;padding:30px 18px 90px}
+  .s5,.s4,.s3{grid-column:span 1}
+  .paper{min-height:0;padding:24px 20px}
+  .detail{inset:-8px;padding:22px 18px}
+  .deco-orbit{width:420px;height:420px;top:-90px}
+  .deco-rose{width:90px;height:90px}
+  .seasons{grid-template-columns:repeat(2,1fr)}
+  .art-toggle{right:12px;bottom:12px;font-size:8.5px;padding:9px 13px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <svg class="deco deco-orbit" viewBox="0 0 400 400" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="200" cy="200" r="186" stroke-dasharray="1 7"/>
+      <ellipse cx="200" cy="200" rx="176" ry="104"/>
+      <ellipse cx="200" cy="200" rx="150" ry="150" stroke-dasharray="3 8"/>
+      <ellipse cx="200" cy="200" rx="120" ry="62"/>
+      <circle cx="200" cy="200" r="10" fill="currentColor" stroke="none"/>
+      <circle cx="60" cy="168" r="4" fill="currentColor" stroke="none"/>
+      <circle cx="330" cy="232" r="5" fill="currentColor" stroke="none"/>
+      <circle cx="250" cy="86" r="3" fill="currentColor" stroke="none"/>
+    </g>
+  </svg>
+  <svg class="deco deco-rose" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="50" cy="50" r="47"/><circle cx="50" cy="50" r="40" stroke-dasharray="2 4"/>
+      <path d="M50 3 L55 45 L97 50 L55 55 L50 97 L45 55 L3 50 L45 45 Z"/>
+      <path d="M50 16 L53 47 L84 50 L53 53 L50 84 L47 53 L16 50 L47 47 Z" stroke-dasharray="2 3"/>
+    </g>
+  </svg>
+  <svg class="deco deco-bot" viewBox="0 0 80 200" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+      <path d="M42 198 C38 148 46 96 40 8"/>
+      <path d="M41 166 C22 158 13 141 15 126 C34 130 41 146 41 166Z"/>
+      <path d="M42 138 C61 130 70 113 68 98 C49 102 42 118 42 138Z"/>
+      <path d="M40 108 C22 100 14 84 16 70 C34 74 40 90 40 108Z"/>
+      <path d="M41 80 C58 72 65 57 63 44 C46 48 41 62 41 80Z"/>
+      <circle cx="40" cy="30" r="4"/><circle cx="34" cy="20" r="3"/><circle cx="46" cy="18" r="3"/>
+    </g>
+  </svg>
+
+  <div class="kicker">Plano Estratégico de Comunicação 2026</div>
+  <h1>SIZÍGIA<span class="dot">.</span></h1>
+  <div class="sub">Psiquiatria</div>
+  <p class="lead">Ciência, escuta, contexto e singularidade. Um moodboard vivo da estratégia de conteúdo para o perfil do Instagram — <em>passe o mouse ou toque em cada recorte</em> para abrir o plano detalhado.</p>
+  <div class="rule"></div>
+  <div class="hintbar">10 recortes · 4 pilares · 90 dias</div>
+</header>
+
+<nav class="chips" aria-label="Filtrar por pilar">
+  <button class="chip" data-filter="all" aria-pressed="true">Todos</button>
+  <button class="chip" data-filter="ciencia" aria-pressed="false">Ciência</button>
+  <button class="chip" data-filter="contexto" aria-pressed="false">Contexto</button>
+  <button class="chip" data-filter="escuta" aria-pressed="false">Escuta</button>
+  <button class="chip" data-filter="singularidade" aria-pressed="false">Singularidade</button>
+</nav>
+
+<main class="board">
+
+  <!-- 01 DIAGNÓSTICO -->
+  <article class="mood-item night s5" data-pillar="contexto" data-art="comet" data-pos="right -6% top -8%" data-size="62%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">I</span>
+      <h2>Diagnóstico</h2>
+      <p class="teaser">Ruído digital, falta de referência — e a oportunidade de construir uma narrativa clínica.</p>
+      <span class="tag">Contexto</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Diagnóstico</h3>
+      <span class="sub2">Desafios e oportunidades</span>
+      <p>Três forças definem o ponto de partida. O <strong>ruído digital</strong>: conteúdo rápido, sensacionalista e descontextualizado ocupa quase todo o espaço da saúde mental nas redes. A <strong>falta de referência</strong>: a psiquiatria aparece fragmentada, em recortes sem lastro clínico, e o paciente não encontra uma voz que sustente o que diz.</p>
+      <p>A terceira força é a <strong>oportunidade</strong>: construir uma narrativa clínica, humana e baseada em evidências — algo que praticamente ninguém está fazendo com consistência.</p>
+      <h4>No Instagram</h4>
+      <ul>
+        <li>Nenhuma publicação promete cura, resultado ou diagnóstico — a autoridade vem do rigor, não da promessa.</li>
+        <li>Todo carrossel abre com a pergunta literal do paciente e fecha com a referência que sustenta o conteúdo.</li>
+        <li>Capa em tipografia serifada, sem rostos em close e sem antes/depois: o visual sinaliza seriedade antes da leitura.</li>
+        <li>1 carrossel de desmistificação por semana, 6 a 8 slides, um único conceito por slide.</li>
+        <li>Legenda em três blocos: contexto → evidência → convite ao diálogo.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Salvamentos e compartilhamentos por alcance (não curtidas), tempo médio de leitura do carrossel e número de perguntas espontâneas recebidas em DM por semana.</p>
+    </div>
+  </article>
+
+  <!-- 02 PLATAFORMA -->
+  <article class="mood-item s4" data-pillar="singularidade" data-art="arm" data-pos="right -8% bottom -10%" data-size="74%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">II</span>
+      <h2>Plataforma de marca</h2>
+      <p class="teaser">Traduzir o movimento dos ciclos em clareza para escolhas conscientes.</p>
+      <span class="tag">Singularidade</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Plataforma de marca</h3>
+      <span class="sub2">Propósito e quatro pilares</span>
+      <p><strong>Propósito:</strong> traduzir o movimento dos ciclos em clareza para escolhas e reposicionamentos conscientes.</p>
+      <p>Quatro pilares sustentam a marca: <strong>ciência baseada em evidências</strong> (conhecimento rigoroso como fundamento de cada decisão), <strong>escuta atenta</strong> (compreender profundamente antes de orientar), <strong>contexto humano</strong> (cada história é única) e <strong>singularidade</strong> (soluções personalizadas que respeitam essência e trajetória).</p>
+      <h4>No Instagram</h4>
+      <ul>
+        <li>Bio com uma linha de promessa clara, cidade e CRM — nada de frases genéricas.</li>
+        <li>Quatro destaques fixos espelhando exatamente os quatro pilares.</li>
+        <li>Grid alternando evidência e humanidade na proporção 3:1 — três posts de conteúdo para um institucional.</li>
+        <li>Publicação de apresentação fixada no topo, com o propósito traduzido para a linguagem do paciente.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Visitas ao perfil → cliques no link, novos seguidores por semana e salvamentos por destaque.</p>
+    </div>
+  </article>
+
+  <!-- 03 JORNADA -->
+  <article class="mood-item s3" data-pillar="escuta" data-art="dia" data-pos="center -14% bottom" data-size="90%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">III</span>
+      <h2>Jornada do paciente</h2>
+      <p class="teaser">Seis etapas, da percepção do sofrimento ao acompanhamento contínuo.</p>
+      <span class="tag">Escuta</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Jornada do paciente</h3>
+      <span class="sub2">Da busca por ajuda ao acompanhamento</span>
+      <p>A sequência correta, sem repetições: <strong>1.</strong> percepção do sofrimento · <strong>2.</strong> busca por explicação · <strong>3.</strong> avaliação clínica · <strong>4.</strong> construção de vínculo · <strong>5.</strong> acompanhamento contínuo · <strong>6.</strong> reorganização e manutenção.</p>
+      <p>No funil: etapas 1–2 são topo, a etapa 3 é o meio e as etapas 4–6 são o fundo.</p>
+      <h4>No Instagram</h4>
+      <ul>
+        <li>Cada etapa vira uma pauta fixa do calendário — o conteúdo acompanha o paciente, não o contrário.</li>
+        <li>Etapa 3: Reel “o que esperar da primeira consulta”, reduzindo a ansiedade que trava o agendamento.</li>
+        <li>Etapa 4: stories de bastidor do consultório, mostrando escuta real sem expor pacientes.</li>
+        <li>Etapas 5–6: série mensal sobre continuidade e manutenção do cuidado.</li>
+        <li>CTA por etapa: salvar (1–2), agendar (3), responder caixinha (4–6).</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Por etapa: salvamentos nas iniciais, cliques no link na avaliação clínica e respostas em stories nas finais.</p>
+    </div>
+  </article>
+
+  <!-- 04 PERFIS -->
+  <article class="mood-item s4" data-pillar="contexto" data-art="flor1" data-pos="left -10% bottom -12%" data-size="66%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">IV</span>
+      <h2>Perfis de busca</h2>
+      <p class="teaser">Quem busca explicação, quem busca alívio, quem busca reorganização.</p>
+      <span class="tag">Contexto</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Perfis de busca</h3>
+      <span class="sub2">Diferentes trajetórias, um ponto de alinhamento</span>
+      <p>Três perfis chegam ao perfil com necessidades distintas: <strong>quem busca explicação</strong> quer entender o que sente; <strong>quem busca alívio</strong> quer acolhimento imediato; <strong>quem busca reorganização</strong> quer passos práticos para retomar a rotina.</p>
+      <h4>No Instagram</h4>
+      <ul>
+        <li>Rotação semanal: segunda — explicação (carrossel conceitual); quarta — alívio (Reel de escuta, tom calmo, sem promessa); sexta — reorganização (checklist prático: sono, rotina, primeira consulta).</li>
+        <li>Templates visuais distintos por perfil, para o seguidor se reconhecer em dois segundos.</li>
+        <li>Nenhum conteúdo tenta falar com os três ao mesmo tempo — a segmentação é o que gera identificação.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Qual perfil gera salvamento (explicação), DM (alívio) e clique no link (reorganização).</p>
+    </div>
+  </article>
+
+  <!-- 05 ECOSSISTEMA -->
+  <article class="mood-item night s4" data-pillar="ciencia" data-art="comp" data-pos="right -12% top -14%" data-size="72%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">V</span>
+      <h2>Ecossistema de canais</h2>
+      <p class="teaser">Núcleo, três órbitas — canais diferentes, uma única órbita.</p>
+      <span class="tag">Ciência</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Ecossistema de canais</h3>
+      <span class="sub2">Canais diferentes, uma única órbita</span>
+      <p><strong>Núcleo:</strong> site oficial. <strong>Órbita 1:</strong> busca (Google + Doctoralia). <strong>Órbita 2:</strong> redes sociais (Instagram). <strong>Órbita 3:</strong> acesso (WhatsApp).</p>
+      <p>O Instagram é <em>camada de descoberta</em>, não destino. Ele existe para levar ao núcleo.</p>
+      <h4>No Instagram</h4>
+      <ul>
+        <li>Toda CTA aponta para Doctoralia ou site — nunca para o vácuo.</li>
+        <li>Link na bio com no máximo dois destinos: agendar e conhecer o site.</li>
+        <li>Resposta de DM em até 24h com script de primeiro contato: acolher, informar, encaminhar ao agendamento.</li>
+        <li>Nenhum diagnóstico, orientação de medicação ou conduta por mensagem.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Perfil → clique no link → agendamento, e a origem declarada de cada agendamento.</p>
+    </div>
+  </article>
+
+  <!-- 06 PILARES EDITORIAIS -->
+  <article class="mood-item s4" data-pillar="singularidade" data-art="stat" data-pos="right -14% bottom -8%" data-size="68%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">VI</span>
+      <h2>Quatro pilares editoriais</h2>
+      <p class="teaser">Ciência, contexto, escuta e singularidade — quatro eixos, uma visão.</p>
+      <span class="tag">Singularidade</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Quatro pilares editoriais</h3>
+      <span class="sub2">Quatro eixos, uma visão</span>
+      <p><strong>Ciência:</strong> rigor que informa e orienta. <strong>Contexto:</strong> leitura ampla para dar sentido. <strong>Escuta:</strong> atenção profunda ao humano. <strong>Singularidade:</strong> voz própria que cria identidade.</p>
+      <h4>Formato por pilar</h4>
+      <ul>
+        <li>Ciência → carrossel com referência explícita.</li>
+        <li>Contexto → Reel narrado de 60 a 90 segundos.</li>
+        <li>Escuta → caixinha de perguntas e stories.</li>
+        <li>Singularidade → texto autoral e bastidores do consultório.</li>
+      </ul>
+      <h4>Assinatura visual</h4>
+      <div class="seasons">
+        <figure>
+          <img src="as/s1.webp" alt="Primavera — gravura de cabeça floral" loading="lazy"
+               onerror="this.style.display='none'">
+          <figcaption>Primavera</figcaption>
+        </figure>
+        <figure>
+          <img src="as/s2.webp" alt="Estate — gravura de cabeça de frutos" loading="lazy"
+               onerror="this.style.display='none'">
+          <figcaption>Estate</figcaption>
+        </figure>
+        <figure>
+          <img src="as/s3.webp" alt="Autunno — gravura de cabeça de colheita" loading="lazy"
+               onerror="this.style.display='none'">
+          <figcaption>Autunno</figcaption>
+        </figure>
+        <figure>
+          <img src="as/s4.webp" alt="Inverno — gravura de cabeça de raízes" loading="lazy"
+               onerror="this.style.display='none'">
+          <figcaption>Inverno</figcaption>
+        </figure>
+      </div>
+      <p>As quatro cabeças sazonais rotacionam a cada estação como assinatura visual do perfil — o mesmo sistema gráfico, quatro climas.</p>
+      <p class="metric"><strong>Como medir</strong>Desempenho por pilar e equilíbrio do calendário: nenhum pilar abaixo de 15% do conteúdo do mês.</p>
+    </div>
+  </article>
+
+  <!-- 07 CADÊNCIA -->
+  <article class="mood-item s5" data-pillar="ciencia" data-art="flor2" data-pos="right -8% top -10%" data-size="54%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">VII</span>
+      <h2>Cadência de conteúdo</h2>
+      <p class="teaser">Ritmo constante, não aleatório. Um compasso sustentável para o perfil.</p>
+      <span class="tag">Ciência</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Cadência de conteúdo</h3>
+      <span class="sub2">Ritmo semanal e mensal</span>
+      <p><strong>Ritmo semanal:</strong> 1 publicação principal + 2 conteúdos complementares + atualizações breves. <strong>Ritmo mensal:</strong> 1 tema-guia + revisão e planejamento.</p>
+      <h4>Calendário operacional</h4>
+      <ul>
+        <li>Terça: carrossel principal no feed.</li>
+        <li>Quinta: Reel de aprofundamento.</li>
+        <li>Sábado: stories complementares e caixinha.</li>
+        <li>Última sexta do mês: revisão de métricas e definição do tema-guia seguinte.</li>
+      </ul>
+      <h4>Produção</h4>
+      <ul>
+        <li>Gravação em lote, uma vez por mês, em bloco de 4 horas.</li>
+        <li>Banco permanente de 12 posts e 8 stories prontos — o calendário nunca depende de inspiração do dia.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Consistência (publicados ÷ planejados) e alcance médio por formato, para saber onde investir energia.</p>
+    </div>
+  </article>
+
+  <!-- 08 PRIMEIRO MÊS -->
+  <article class="mood-item s4" data-pillar="escuta" data-art="jug" data-pos="right -6% bottom -12%" data-size="62%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">VIII</span>
+      <h2>Primeiro mês</h2>
+      <p class="teaser">Fundação, desmistificação, escuta e primeiros resultados.</p>
+      <span class="tag">Escuta</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Planejamento do primeiro mês</h3>
+      <span class="sub2">Ciclo inicial para estabelecer a base</span>
+      <h4>Semana 1 — Fundação</h4>
+      <ul>
+        <li>Bio, foto, destaques e link revisados; post de apresentação fixado.</li>
+        <li>Definimos bases sólidas para sustentar todas as ações.</li>
+      </ul>
+      <h4>Semana 2 — Desmistificação</h4>
+      <ul>
+        <li>Primeiro carrossel traduzindo ciência em linguagem clara e acessível.</li>
+        <li>Uma pergunta real de paciente como gancho de abertura.</li>
+      </ul>
+      <h4>Semana 3 — Foco na escuta</h4>
+      <ul>
+        <li>Caixinha de perguntas ativa; resposta pública às dúvidas mais frequentes.</li>
+        <li>Script de DM em operação para entender o que o público realmente pergunta.</li>
+      </ul>
+      <h4>Semana 4 — Primeiros resultados</h4>
+      <ul>
+        <li>Entregas iniciais consolidadas e leitura dos primeiros números.</li>
+        <li>Mostrar valor desde o início: o que funcionou e o que será ajustado.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Ao fim do mês: 4 publicações principais entregues, 1 tema-guia definido e uma leitura comparativa de alcance e salvamentos.</p>
+    </div>
+  </article>
+
+  <!-- 09 ÉTICA -->
+  <article class="mood-item night s3" data-pillar="contexto" data-art="star" data-pos="right -10% top -10%" data-size="48%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">IX</span>
+      <h2>Ética e responsabilidade</h2>
+      <p class="teaser">Comunicar com clareza, respeito e responsabilidade.</p>
+      <span class="tag">Contexto</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Ética e responsabilidade</h3>
+      <span class="sub2">Limites que sustentam a autoridade</span>
+      <p>Três compromissos inegociáveis: <strong>revisão técnica</strong> pela equipe médica, <strong>caráter informativo</strong> sem promessas ou diagnósticos e <strong>proteção da privacidade</strong>, sem divulgação de casos reais ou dados sensíveis.</p>
+      <h4>Checklist antes de publicar</h4>
+      <ul>
+        <li>O conteúdo passou por revisão da equipe médica?</li>
+        <li>Há qualquer promessa de cura, resultado ou prazo? (se sim, reescrever)</li>
+        <li>Algum paciente ou caso real é identificável? (se sim, remover)</li>
+        <li>Há diagnóstico, prescrição ou conduta em comentário ou DM? (nunca)</li>
+        <li>Depoimento com consentimento registrado?</li>
+        <li>Aviso de caráter informativo presente na legenda?</li>
+        <li>Conformidade com as normas do CFM sobre publicidade médica?</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>100% dos posts com revisão registrada e zero menções a casos reais — verificação mensal, não por post.</p>
+    </div>
+  </article>
+
+  <!-- 10 90 DIAS -->
+  <article class="mood-item s5" data-pillar="ciencia" data-art="comet" data-pos="right -16% top -18%" data-size="78%">
+    <div class="paper" role="button" tabindex="0" aria-expanded="false">
+      <span class="num">X</span>
+      <h2>Plano de 90 dias</h2>
+      <p class="teaser">Fundamentos, lançamento, autoridade, otimização. Traçar a trajetória.</p>
+      <span class="tag">Ciência</span>
+      <span class="hint">Abrir estratégia
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+    <div class="detail">
+      <button class="close" aria-label="Fechar">×</button>
+      <h3>Plano de 90 dias</h3>
+      <span class="sub2">Trajetória de alinhamento</span>
+      <h4>Dias 1–30 · Fundamentos</h4>
+      <ul>
+        <li>Identidade visual, bio, destaques e banco de conteúdo.</li>
+        <li>Meta: 4 publicações principais e cadência semanal estável.</li>
+      </ul>
+      <h4>Dias 31–60 · Lançamento</h4>
+      <ul>
+        <li>Séries recorrentes no ar, caixinha de perguntas e script de DM operando.</li>
+        <li>Meta: crescimento consistente de seguidores qualificados e primeiros salvamentos.</li>
+      </ul>
+      <h4>Dias 61–80 · Autoridade</h4>
+      <ul>
+        <li>Conteúdos de maior profundidade, colaborações e reaproveitamento dos posts de melhor desempenho.</li>
+        <li>Meta: aumentar tempo de leitura e compartilhamentos.</li>
+      </ul>
+      <h4>Dias 81–90 · Otimização</h4>
+      <ul>
+        <li>Leitura completa dos dados e corte do que não performa.</li>
+        <li>Meta: consolidar o calendário do trimestre seguinte com base em evidência.</li>
+      </ul>
+      <p class="metric"><strong>Como medir</strong>Uma métrica-norte por fase — nunca todas ao mesmo tempo, para que a decisão de ajuste seja clara.</p>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0l2 10 10 2-10 2-2 10-2-10L0 12l10-2z"/></svg>
+  Sizígia Psiquiatria · Plano Estratégico de Comunicação 2026
+  <p class="fine">Conteúdo de caráter informativo. Nenhuma publicação substitui avaliação médica individual.</p>
+</footer>
+
+<script>
+(function(){
+  // ---- bordas rasgadas ----
+  function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function torn(seed,jitter){
+    var r=mulberry32(seed),pts=[],step=4;
+    for(var x=0;x<100;x+=step)pts.push([x,r()*jitter]);
+    for(var y=0;y<100;y+=step)pts.push([100-r()*jitter,y]);
+    for(var x2=100;x2>0;x2-=step)pts.push([x2,100-r()*jitter]);
+    for(var y2=100;y2>0;y2-=step)pts.push([r()*jitter,y2]);
+    return 'polygon('+pts.map(function(p){return p[0].toFixed(2)+'% '+p[1].toFixed(2)+'%'}).join(',')+')';
+  }
+  document.querySelectorAll('.paper').forEach(function(el,i){
+    el.style.setProperty('--torn',torn(i*37+11,1.5));
+    var rots=[-1.4,.8,-2,1.2,-.6,1.8,-.9,1.1,-1.6,.7];
+    el.style.setProperty('--rot',rots[i%rots.length]+'deg');
+  });
+
+  // ---- abrir / fechar ----
+  var items=Array.prototype.slice.call(document.querySelectorAll('.mood-item'));
+  function closeAll(except){
+    items.forEach(function(it){
+      if(it===except)return;
+      it.classList.remove('open');
+      it.querySelector('.paper').setAttribute('aria-expanded','false');
+    });
+  }
+  items.forEach(function(it){
+    var paper=it.querySelector('.paper'), det=it.querySelector('.detail');
+    function toggle(){
+      var open=it.classList.toggle('open');
+      paper.setAttribute('aria-expanded',open?'true':'false');
+      if(open)closeAll(it);
+    }
+    paper.addEventListener('click',function(e){e.stopPropagation();toggle();});
+    paper.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}
+    });
+    det.addEventListener('click',function(e){e.stopPropagation();});
+    det.querySelector('.close').addEventListener('click',function(e){
+      e.stopPropagation();it.classList.remove('open');paper.setAttribute('aria-expanded','false');
+    });
+  });
+  document.addEventListener('click',function(){closeAll(null);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll(null);});
+
+  // ---- filtros ----
+  var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      c.setAttribute('aria-pressed','true');
+      var f=c.dataset.filter;
+      items.forEach(function(it){
+        var show=(f==='all'||it.dataset.pillar===f);
+        it.classList.toggle('hidden',!show);
+        if(!show){it.classList.remove('open');}
+      });
+    });
+  });
+
+  // ---- gravuras reais ----
+  var ART_BASE = 'as/';
+  var artOn = true;
+
+  document.querySelectorAll('.mood-item[data-art]').forEach(function(it){
+    var name  = it.dataset.art;
+    var url   = ART_BASE + name + '.webp';
+    var paper = it.querySelector('.paper');
+
+    var probe = new Image();
+    probe.onload = function(){
+      paper.style.setProperty('--art','url("'+url+'")');
+      if(it.dataset.pos)  paper.style.setProperty('--art-pos', it.dataset.pos);
+      if(it.dataset.size) paper.style.setProperty('--art-size', it.dataset.size);
+    };
+    probe.onerror = function(){
+      console.info('[moodboard] sem gravura para "'+name+'" — usando versão tipográfica');
+    };
+    probe.src = url;
+  });
+
+  // botão liga/desliga
+  var btn = document.createElement('button');
+  btn.className = 'art-toggle';
+  btn.type = 'button';
+  btn.textContent = 'Ocultar colagens';
+  btn.setAttribute('aria-pressed','true');
+  btn.addEventListener('click', function(){
+    artOn = !artOn;
+    document.body.classList.toggle('no-art', !artOn);
+    btn.textContent = artOn ? 'Ocultar colagens' : 'Mostrar colagens';
+    btn.setAttribute('aria-pressed', artOn ? 'true' : 'false');
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+          </html>
